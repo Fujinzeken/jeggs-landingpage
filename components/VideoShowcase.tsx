@@ -61,13 +61,7 @@ export default function VideoShowcase() {
         </motion.div>
 
         {/* Main Video Player */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-12 sm:mt-16 relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-900 shadow-2xl shadow-black/50 group"
-        >
+        <div className="mt-12 sm:mt-16 relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-900 shadow-2xl shadow-black/50 group">
           {isPlaying && videos[activeVideo].youtubeId ? (
             <iframe
               src={`https://www.youtube.com/embed/${videos[activeVideo].youtubeId}?autoplay=1&rel=0`}
@@ -131,7 +125,7 @@ export default function VideoShowcase() {
               </div>
             </>
           )}
-        </motion.div>
+        </div>
 
         {/* Thumbnail Selector */}
         <div className="mt-4 sm:mt-8 grid grid-cols-3 gap-2 sm:gap-4">
