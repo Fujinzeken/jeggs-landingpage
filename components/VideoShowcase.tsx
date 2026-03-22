@@ -49,7 +49,7 @@ export default function VideoShowcase() {
           <p className="text-sm font-bold uppercase tracking-[0.3em] text-brand-orange">
             See How We Work
           </p>
-          <h2 className="mt-4 text-5xl sm:text-6xl font-black tracking-tight text-white">
+          <h2 className="mt-4 text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
             Don&apos;t take our word for it.
             <br />
             <span className="text-brand-orange">Watch.</span>
@@ -66,7 +66,7 @@ export default function VideoShowcase() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-16 relative aspect-video rounded-3xl overflow-hidden bg-gray-900 shadow-2xl shadow-black/50 group"
+          className="mt-12 sm:mt-16 relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-900 shadow-2xl shadow-black/50 group"
         >
           {isPlaying && videos[activeVideo].youtubeId ? (
             <iframe
@@ -120,12 +120,12 @@ export default function VideoShowcase() {
                 </p>
               </button>
 
-              {/* Video Info Overlay */}
-              <div className="absolute bottom-8 left-8 right-8">
-                <h3 className="text-2xl font-black text-white">
+              {/* Video Info Overlay - Hidden on mobile */}
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 hidden sm:block">
+                <h3 className="text-lg sm:text-2xl font-black text-white">
                   {videos[activeVideo].title}
                 </h3>
-                <p className="mt-2 text-white/60 max-w-lg">
+                <p className="mt-1 sm:mt-2 text-sm sm:text-base text-white/60 max-w-lg">
                   {videos[activeVideo].description}
                 </p>
               </div>
@@ -134,7 +134,7 @@ export default function VideoShowcase() {
         </motion.div>
 
         {/* Thumbnail Selector */}
-        <div className="mt-8 grid grid-cols-3 gap-4">
+        <div className="mt-4 sm:mt-8 grid grid-cols-3 gap-2 sm:gap-4">
           {videos.map((video, i) => (
             <button
               key={video.id}
@@ -142,7 +142,7 @@ export default function VideoShowcase() {
                 setActiveVideo(i);
                 setIsPlaying(false);
               }}
-              className={`relative aspect-video rounded-2xl overflow-hidden cursor-pointer group transition-all duration-300 ${
+              className={`relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer group transition-all duration-300 ${
                 i === activeVideo
                   ? "ring-2 ring-brand-orange ring-offset-2 ring-offset-gray-950"
                   : "opacity-50 hover:opacity-80"
@@ -153,8 +153,8 @@ export default function VideoShowcase() {
                 style={{ backgroundImage: `url(${video.thumbnail})` }}
               />
               <div className="absolute inset-0 bg-black/40" />
-              <div className="absolute bottom-3 left-3 right-3">
-                <p className="text-xs font-bold text-white truncate">
+              <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3">
+                <p className="text-[10px] sm:text-xs font-bold text-white truncate">
                   {video.title}
                 </p>
               </div>

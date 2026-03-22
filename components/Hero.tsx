@@ -124,13 +124,13 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Navigation Indicators - Moved to Right */}
-      <div className="absolute bottom-12 right-12 flex items-end gap-4 z-20">
+      {/* Navigation Indicators - Center on mobile, Right on desktop */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:bottom-12 sm:right-12 flex items-end gap-3 sm:gap-4 z-20">
         {SLIDES.map((_, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className="group relative h-12 w-20 cursor-pointer overflow-hidden"
+            className="group relative h-8 w-12 sm:h-12 sm:w-20 cursor-pointer overflow-hidden"
             aria-label={`Go to slide ${i + 1}`}
           >
             {/* Background Line */}
@@ -149,9 +149,9 @@ export default function Hero() {
               />
             )}
 
-            {/* Slide Number */}
+            {/* Slide Number - Hidden on mobile */}
             <span
-              className={`absolute bottom-4 left-0 text-xs font-bold transition-all duration-300 ${i === index ? "text-brand-orange translate-y-0 opacity-100" : "text-white/40 translate-y-2 opacity-0 group-hover:opacity-100"}`}
+              className={`absolute bottom-4 left-0 text-xs font-bold transition-all duration-300 hidden sm:block ${i === index ? "text-brand-orange translate-y-0 opacity-100" : "text-white/40 translate-y-2 opacity-0 group-hover:opacity-100"}`}
             >
               0{i + 1}
             </span>

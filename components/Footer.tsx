@@ -91,18 +91,71 @@ export default function Footer() {
                 Get in touch and let&apos;s find the perfect plan for your
                 goals. Classes available Monday – Saturday, flexible scheduling.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+
+              {/* Polished Contact Cards */}
+              <div className="mt-10 space-y-4">
                 <a
                   href="tel:08033920224"
-                  className="inline-flex items-center gap-3 rounded-full bg-white/5 border border-white/10 px-6 py-4 text-sm font-bold text-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                  className="group flex items-center gap-5 rounded-2xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 hover:border-brand-orange/30 transition-all duration-300 cursor-pointer"
                 >
-                  📞 08033920224
+                  <div className="flex-none h-12 w-12 rounded-xl bg-brand-orange/10 flex items-center justify-center group-hover:bg-brand-orange transition-colors duration-300">
+                    <svg
+                      className="h-5 w-5 text-brand-orange group-hover:text-white transition-colors"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-white/40">
+                      Call Us
+                    </p>
+                    <p className="text-lg font-bold text-white group-hover:text-brand-orange transition-colors">
+                      0803 392 0224
+                    </p>
+                  </div>
+                  <span className="ml-auto text-white/10 group-hover:text-brand-orange transition-colors">
+                    →
+                  </span>
                 </a>
+
                 <a
                   href="mailto:sojeggs101@gmail.com"
-                  className="inline-flex items-center gap-3 rounded-full bg-white/5 border border-white/10 px-6 py-4 text-sm font-bold text-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                  className="group flex items-center gap-5 rounded-2xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 hover:border-brand-orange/30 transition-all duration-300 cursor-pointer"
                 >
-                  📧 sojeggs101@gmail.com
+                  <div className="flex-none h-12 w-12 rounded-xl bg-brand-orange/10 flex items-center justify-center group-hover:bg-brand-orange transition-colors duration-300">
+                    <svg
+                      className="h-5 w-5 text-brand-orange group-hover:text-white transition-colors"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-white/40">
+                      Email Us
+                    </p>
+                    <p className="text-lg font-bold text-white group-hover:text-brand-orange transition-colors">
+                      sojeggs101@gmail.com
+                    </p>
+                  </div>
+                  <span className="ml-auto text-white/10 group-hover:text-brand-orange transition-colors">
+                    →
+                  </span>
                 </a>
               </div>
             </motion.div>

@@ -112,8 +112,8 @@ export default function StatsAbout() {
       {/* ═══════════════ PHILOSOPHY SECTION ═══════════════ */}
       <section className="relative bg-white py-28 sm:py-36 overflow-hidden">
         {/* Faint background text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
-          <span className="text-[20rem] font-black text-gray-50 leading-none whitespace-nowrap">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none hidden md:block">
+          <span className="text-[10rem] lg:text-[20rem] font-black text-gray-50 leading-none whitespace-nowrap">
             MUSIC
           </span>
         </div>

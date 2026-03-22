@@ -106,18 +106,18 @@ export default function Curriculum() {
 
         {/* Level Tabs */}
         <div className="mt-16 flex justify-center">
-          <div className="inline-flex rounded-2xl bg-white p-2 shadow-lg shadow-gray-200/50">
+          <div className="inline-flex rounded-2xl bg-white p-1.5 sm:p-2 shadow-lg shadow-gray-200/50">
             {levels.map((level, idx) => (
               <button
                 key={level.id}
                 onClick={() => setActiveLevel(idx)}
-                className={`relative rounded-xl px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                className={`relative rounded-xl px-4 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${
                   activeLevel === idx
                     ? "bg-gray-900 text-white shadow-xl"
                     : "text-gray-500 hover:text-gray-900"
                 }`}
               >
-                <span className="mr-2">{level.icon}</span>
+                <span className="mr-1 sm:mr-2">{level.icon}</span>
                 {level.label}
               </button>
             ))}
