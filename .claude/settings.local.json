@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"iframe\\\\|youtubeId\\\\|youtube.com/embed\" /c/Users/miche/Desktop/work/jeggs-website --include=\"*.tsx\" --include=\"*.ts\" ! -path \"*/node_modules/*\" ! -path \"*/.next/*\")"
+    ]
+  }
+}

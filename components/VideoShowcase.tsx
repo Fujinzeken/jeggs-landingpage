@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 const videos = [
@@ -10,27 +10,28 @@ const videos = [
     description:
       "Watch how Samuel breaks down complex musical concepts into simple, practical steps that anyone can follow.",
     thumbnail: "/images/panagiotis-falcos-GgjNItqNiok-unsplash.jpg",
-    youtubeId: "", // Replace with actual YouTube ID later
+    videoUrl: "https://assets.articlerank.pro/freelance/studio-session.mp4",
   },
   {
     id: "student1",
     title: "Student Performance",
     description: "Watch our students play after just weeks of training.",
     thumbnail: "/images/dylan-mcleod-VRdZBLqnoMU-unsplash.jpg",
-    youtubeId: "",
+    videoUrl: "https://assets.articlerank.pro/freelance/session2.mp4",
   },
   {
     id: "student2",
     title: "Studio Session",
     description: "A peek inside our hands-on production sessions.",
     thumbnail: "/images/tanner-boriack-hxnBkzz9iL4-unsplash.jpg",
-    youtubeId: "",
+    videoUrl: "https://assets.articlerank.pro/freelance/session-3.mp4",
   },
 ];
 
 export default function VideoShowcase() {
   const [activeVideo, setActiveVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <section className="relative py-28 sm:py-36 bg-gray-950 overflow-hidden">
@@ -62,13 +63,14 @@ export default function VideoShowcase() {
 
         {/* Main Video Player */}
         <div className="mt-12 sm:mt-16 relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-900 shadow-2xl shadow-black/50 group">
-          {isPlaying && videos[activeVideo].youtubeId ? (
-            <iframe
-              src={`https://www.youtube.com/embed/${videos[activeVideo].youtubeId}?autoplay=1&rel=0`}
-              className="absolute inset-0 w-full h-full"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title={videos[activeVideo].title}
+          {isPlaying ? (
+            <video
+              ref={videoRef}
+              src={videos[activeVideo].videoUrl}
+              className="absolute inset-0 w-full h-full object-contain bg-black"
+              controls
+              autoPlay
+              playsInline
             />
           ) : (
             <>
@@ -84,9 +86,7 @@ export default function VideoShowcase() {
               {/* Play Button */}
               <button
                 onClick={() => {
-                  if (videos[activeVideo].youtubeId) {
-                    setIsPlaying(true);
-                  }
+                  setIsPlaying(true);
                 }}
                 className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer"
               >
@@ -108,9 +108,7 @@ export default function VideoShowcase() {
                   </div>
                 </motion.div>
                 <p className="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-white/70">
-                  {videos[activeVideo].youtubeId
-                    ? "Play Video"
-                    : "Video Coming Soon"}
+                  Play Video
                 </p>
               </button>
 

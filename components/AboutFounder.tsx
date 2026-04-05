@@ -45,7 +45,7 @@ export default function AboutFounder() {
           className="relative bg-gray-900 overflow-hidden"
         >
           <Image
-            src="/hero-instructor.png"
+            src="/hero-instructor-new.webp"
             alt="Jegede Samuel Olayinka — Founder of Sojeggs Music"
             fill
             className="object-cover opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-700"
